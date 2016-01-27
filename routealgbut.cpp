@@ -37,7 +37,8 @@ mid=(start+end)/2;
 
 s[0]=src/2;
 
-cout<<src<<"="<<s[0];
+//cout<<src<<"="<<s[0];
+cout<<"\n";
 for(i=0;grp<nnodes;i++)
 {
 
@@ -46,7 +47,7 @@ if ((start<mid)&&(dest<mid))
 if ((start<mid)&&(dest>mid))
  loc=1;
 if ((start>mid)&&(dest<mid))
- loc=2;
+ loc=3;
 if ((start>mid)&&(dest>mid))
  loc=3;
 
@@ -56,6 +57,7 @@ switch(loc)
 case 0:dir=LEFT;
        s[i+1]=src;      
        end=mid+1;
+       cout<<"\nLEFT";
        break;
 case 1:dir=RIGHT;
        if(src<=(nnodes/(4*grp)))
@@ -63,6 +65,7 @@ case 1:dir=RIGHT;
        else
        s[i+1]=src;
        start=mid;
+ cout<<"\nRIGHT";
        break;
 case 2:dir=LEFT;
        if(src>=(nnodes/(4*grp)))
@@ -70,17 +73,19 @@ case 2:dir=LEFT;
        else
        s[i+1]=src;
        end=mid+1;
+ cout<<"\nLEFT";
        break;
 case 3:dir=RIGHT;
        s[i+1]=src;
        start=mid;
+ cout<<"\nRIGHT";
        break;
 }
 
 grp=grp*2;
 
-cout <<"\n";
-cout<<s[i]<<"="<<s[i+1];
+//cout <<"\n";
+//cout<<s[i]<<"="<<s[i+1];
 
 mid=(start+end)/2;
 }
