@@ -7,7 +7,7 @@ using namespace std;
 
 int main ()
 {
-int src,dest,start,end,nnodes,nstages;
+float src,dest,start,end,nnodes,nstages;
 float mid;
 int loc,grp,dir;
 int i,s[100];
@@ -56,7 +56,7 @@ switch(loc)
 { 
 case 0:dir=LEFT;
        s[i+1]=src;      
-       end=mid+1;
+       end=mid;
        cout<<"\nLEFT";
        break;
 case 1:dir=RIGHT;
@@ -64,7 +64,7 @@ case 1:dir=RIGHT;
        s[i+1]=src+(nnodes/(4*grp));
        else
        s[i+1]=src;
-       start=mid;
+       start=mid+1;
  cout<<"\nRIGHT";
        break;
 case 2:dir=LEFT;
@@ -72,12 +72,12 @@ case 2:dir=LEFT;
        s[i+1]=src-(nnodes/(4*grp));
        else
        s[i+1]=src;
-       end=mid+1;
+       end=mid;
  cout<<"\nLEFT";
        break;
 case 3:dir=RIGHT;
        s[i+1]=src;
-       start=mid;
+       start=mid+1;
  cout<<"\nRIGHT";
        break;
 }
